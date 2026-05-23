@@ -30,3 +30,10 @@ Browser-based code playground inspired by CodeSandbox.
 - What I changed before approving: I confirmed this task should stay focused on the runner only and should not include templates, localStorage, tests, new dependencies, backend code, or build log changes.
 - Verification: Ran `npm run build`, started the app with `npm run dev`, clicked Run, confirmed the starter output appeared, confirmed edits did not update the preview until Run was clicked again, and confirmed CSS and JavaScript affected the iframe preview.
 - One thing I learned: Using an iframe with `srcDoc` lets user code run separately from the React app, which is much safer than trying to execute code in the parent page.
+
+## Task 5 — Starter templates
+- Brief: Add starter templates that can fill the HTML, CSS, and JavaScript editor panels.
+- What Claude proposed: Claude proposed creating a dedicated `src/templates.js` file with Basic Page and Button Demo templates, then adding a template selector to the toolbar.
+- What I changed before approving: I confirmed that selecting a template should update the editor panels only and should not automatically run the preview.
+- Verification: Ran `npm run build`, started the app with `npm run dev`, selected both templates, confirmed the editors updated, confirmed the preview did not auto-run, then clicked Run and verified both previews worked.
+- One thing I learned: Separating template data from the app component makes the code easier to expand later without crowding the main UI file.
