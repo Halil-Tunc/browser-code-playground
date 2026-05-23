@@ -1,16 +1,22 @@
 import { useState } from 'react'
 import './App.css'
+import { buildDoc } from './utils/buildDoc'
 
 function App() {
   const [html, setHtml] = useState('<h1>Hello, World!</h1>\n<p>Edit the panels and click Run to see your changes.</p>')
   const [css, setCss] = useState('body {\n  font-family: sans-serif;\n  padding: 24px;\n  background: #fff;\n  color: #222;\n}')
   const [js, setJs] = useState("console.log('JavaScript is ready.');")
+  const [srcDoc, setSrcDoc] = useState(null)
+
+  function handleRun() {
+    setSrcDoc(buildDoc(html, css, js))
+  }
 
   return (
     <div className="app">
       <header className="toolbar">
         <h1 className="toolbar-title">Code Playground</h1>
-        <button type="button" className="run-btn">Run</button>
+        <button type="button" className="run-btn" onClick={handleRun}>Run</button>
       </header>
       <main className="workspace">
         <div className="editors">
@@ -28,7 +34,10 @@ function App() {
           </div>
         </div>
         <div className="preview">
-          <p className="preview-placeholder">Preview will appear here after you click Run.</p>
+          {srcDoc === null
+            ? <p className="preview-placeholder">Preview will appear here after you click Run.</p>
+            : <iframe title="preview" srcDoc={srcDoc} sandbox="allow-scripts" />
+          }
         </div>
       </main>
     </div>
