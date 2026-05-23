@@ -23,3 +23,10 @@ Browser-based code playground inspired by CodeSandbox.
 - What I changed before approving: I confirmed the task should not include Run button logic, iframe preview, templates, localStorage, tests, new dependencies, or build log changes.
 - Verification: Ran `npm run build`, started the app with `npm run dev`, and confirmed the browser showed starter HTML, CSS, and JavaScript that I could edit in each panel.
 - One thing I learned: Keeping preview behavior out of this task made the editor state change easy to verify by itself.
+
+## Task 4 — Run button and iframe preview
+- Brief: Implement the Run button so it combines the HTML, CSS, and JavaScript editor values into a preview document and renders it inside an iframe.
+- What Claude proposed: Claude proposed a pure `buildDoc` helper, `srcDoc` state in `App.jsx`, a Run button handler, and iframe styling so the preview fills the preview panel.
+- What I changed before approving: I confirmed this task should stay focused on the runner only and should not include templates, localStorage, tests, new dependencies, backend code, or build log changes.
+- Verification: Ran `npm run build`, started the app with `npm run dev`, clicked Run, confirmed the starter output appeared, confirmed edits did not update the preview until Run was clicked again, and confirmed CSS and JavaScript affected the iframe preview.
+- One thing I learned: Using an iframe with `srcDoc` lets user code run separately from the React app, which is much safer than trying to execute code in the parent page.
