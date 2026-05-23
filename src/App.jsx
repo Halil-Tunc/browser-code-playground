@@ -1,21 +1,39 @@
 import { useState } from 'react'
 import './App.css'
 import { buildDoc } from './utils/buildDoc'
+import { TEMPLATES } from './templates'
 
 function App() {
   const [html, setHtml] = useState('<h1>Hello, World!</h1>\n<p>Edit the panels and click Run to see your changes.</p>')
   const [css, setCss] = useState('body {\n  font-family: sans-serif;\n  padding: 24px;\n  background: #fff;\n  color: #222;\n}')
   const [js, setJs] = useState("console.log('JavaScript is ready.');")
   const [srcDoc, setSrcDoc] = useState(null)
+  const [selectedTemplate, setSelectedTemplate] = useState('')
 
   function handleRun() {
     setSrcDoc(buildDoc(html, css, js))
+  }
+
+  function handleTemplateChange(e) {
+    const key = e.target.value
+    if (!key) return
+    setSelectedTemplate(key)
+    const t = TEMPLATES[key]
+    setHtml(t.html)
+    setCss(t.css)
+    setJs(t.js)
   }
 
   return (
     <div className="app">
       <header className="toolbar">
         <h1 className="toolbar-title">Code Playground</h1>
+        <select value={selectedTemplate} onChange={handleTemplateChange} className="template-select">
+          <option value="">— Template —</option>
+          {Object.entries(TEMPLATES).map(([key, t]) => (
+            <option key={key} value={key}>{t.label}</option>
+          ))}
+        </select>
         <button type="button" className="run-btn" onClick={handleRun}>Run</button>
       </header>
       <main className="workspace">

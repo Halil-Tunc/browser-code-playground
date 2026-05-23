@@ -44,6 +44,16 @@
   outline-offset: 2px;
 }
 
+.template-select {
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+  cursor: pointer;
+}
+
 .workspace {
   display: grid;
   grid-template-columns: 1fr 1fr;
