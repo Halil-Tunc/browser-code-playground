@@ -16,3 +16,10 @@ Browser-based code playground inspired by CodeSandbox.
 - What I changed before approving: I confirmed the task should stay layout-only and should not include Run button logic, templates, localStorage, tests, or new dependencies.
 - Verification: Ran `npm run build`, started the app with `npm run dev`, and confirmed the browser showed the Code Playground title, HTML/CSS/JavaScript panels, and preview placeholder.
 - One thing I learned: A clear layout-only task keeps the agent from jumping ahead into feature logic too early.
+
+## Task 3 — Editor panels with starter code
+- Brief: Turn the HTML, CSS, and JavaScript placeholder panels into controlled textareas with starter code.
+- What Claude proposed: Claude proposed using React `useState` for the three editor values and replacing the uncontrolled placeholder textareas with controlled inputs.
+- What I changed before approving: I confirmed the task should not include Run button logic, iframe preview, templates, localStorage, tests, new dependencies, or build log changes.
+- Verification: Ran `npm run build`, started the app with `npm run dev`, and confirmed the browser showed starter HTML, CSS, and JavaScript that I could edit in each panel.
+- One thing I learned: Keeping preview behavior out of this task made the editor state change easy to verify by itself.
