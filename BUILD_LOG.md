@@ -9,3 +9,10 @@ Browser-based code playground inspired by CodeSandbox.
 - What I changed before approving: I chose a realistic MVP scope: browser-only HTML/CSS/JS playground instead of a full cloud IDE.
 - Verification: Ran the Vite dev server and opened the app at http://localhost:5173/.
 - One thing I learned: A clear capstone scope matters because “build CodeSandbox” is too broad, but a browser-only playground is realistic.
+
+## Task 2 — Base app shell
+- Brief: Create the main browser playground layout with a title, editor area, preview area, and basic styling.
+- What Claude proposed: Claude proposed replacing the default Vite page with a full-height app shell containing a toolbar, three editor placeholders, and a preview placeholder.
+- What I changed before approving: I confirmed the task should stay layout-only and should not include Run button logic, templates, localStorage, tests, or new dependencies.
+- Verification: Ran `npm run build`, started the app with `npm run dev`, and confirmed the browser showed the Code Playground title, HTML/CSS/JavaScript panels, and preview placeholder.
+- One thing I learned: A clear layout-only task keeps the agent from jumping ahead into feature logic too early.
