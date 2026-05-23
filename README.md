@@ -1,16 +1,42 @@
-# React + Vite
+# Browser Code Playground
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A browser-based HTML, CSS, and JavaScript playground inspired by CodeSandbox.
 
-Currently, two official plugins are available:
+## What it does
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This app lets users write HTML, CSS, and JavaScript in separate editor panels, click Run, and preview the result inside the browser. The goal is to create a beginner-friendly coding sandbox that works without a backend or account system.
 
-## React Compiler
+## Tech stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- JavaScript
+- Vitest
 
-## Expanding the ESLint configuration
+## Planned MVP features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- HTML, CSS, and JavaScript editor panels
+- Live preview iframe
+- Starter templates
+- Reset and clear controls
+- Basic JavaScript error handling
+- localStorage persistence
+- Tests for core helper functions
+
+## Running locally
+
+Install dependencies:
+
+    npm install
+
+Start the dev server:
+
+    npm run dev
+
+Open the local URL shown in the terminal, usually:
+
+    http://localhost:5173/
+
+## Running tests
+
+    npm test
