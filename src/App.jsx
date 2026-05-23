@@ -1,6 +1,11 @@
+import { useState } from 'react'
 import './App.css'
 
 function App() {
+  const [html, setHtml] = useState('<h1>Hello, World!</h1>\n<p>Edit the panels and click Run to see your changes.</p>')
+  const [css, setCss] = useState('body {\n  font-family: sans-serif;\n  padding: 24px;\n  background: #fff;\n  color: #222;\n}')
+  const [js, setJs] = useState("console.log('JavaScript is ready.');")
+
   return (
     <div className="app">
       <header className="toolbar">
@@ -11,15 +16,15 @@ function App() {
         <div className="editors">
           <div className="editor-panel">
             <div className="panel-label">HTML</div>
-            <textarea placeholder="Write HTML here…" />
+            <textarea value={html} onChange={e => setHtml(e.target.value)} />
           </div>
           <div className="editor-panel">
             <div className="panel-label">CSS</div>
-            <textarea placeholder="Write CSS here…" />
+            <textarea value={css} onChange={e => setCss(e.target.value)} />
           </div>
           <div className="editor-panel">
             <div className="panel-label">JavaScript</div>
-            <textarea placeholder="Write JavaScript here…" />
+            <textarea value={js} onChange={e => setJs(e.target.value)} />
           </div>
         </div>
         <div className="preview">
