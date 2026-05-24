@@ -24,6 +24,20 @@ function App() {
     setJs(t.js)
   }
 
+  function handleReset() {
+    if (!selectedTemplate) return
+    const t = TEMPLATES[selectedTemplate]
+    setHtml(t.html)
+    setCss(t.css)
+    setJs(t.js)
+  }
+
+  function handleClear() {
+    setHtml('')
+    setCss('')
+    setJs('')
+  }
+
   return (
     <div className="app">
       <header className="toolbar">
@@ -34,6 +48,8 @@ function App() {
             <option key={key} value={key}>{t.label}</option>
           ))}
         </select>
+        <button type="button" className="secondary-btn" onClick={handleReset} disabled={!selectedTemplate}>Reset</button>
+        <button type="button" className="secondary-btn" onClick={handleClear}>Clear</button>
         <button type="button" className="run-btn" onClick={handleRun}>Run</button>
       </header>
       <main className="workspace">

@@ -44,6 +44,31 @@
   outline-offset: 2px;
 }
 
+.secondary-btn {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+  cursor: pointer;
+}
+
+.secondary-btn:hover {
+  background: var(--code-bg);
+}
+
+.secondary-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.secondary-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
 .template-select {
   font-size: 14px;
   padding: 5px 10px;
