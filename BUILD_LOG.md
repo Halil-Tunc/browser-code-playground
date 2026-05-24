@@ -37,3 +37,10 @@ Browser-based code playground inspired by CodeSandbox.
 - What I changed before approving: I confirmed that selecting a template should update the editor panels only and should not automatically run the preview.
 - Verification: Ran `npm run build`, started the app with `npm run dev`, selected both templates, confirmed the editors updated, confirmed the preview did not auto-run, then clicked Run and verified both previews worked.
 - One thing I learned: Separating template data from the app component makes the code easier to expand later without crowding the main UI file.
+
+## Task 6 — Reset and clear controls
+- Brief: Add Reset and Clear controls for the editor panels.
+- What Claude proposed: Claude proposed adding `handleReset` and `handleClear` functions, placing Reset and Clear buttons in the toolbar, and styling them as secondary controls.
+- What I changed before approving: I confirmed that Reset and Clear should only change editor contents and should not automatically update the iframe preview.
+- Verification: Ran `npm run build`, started the app with `npm run dev`, selected Button Demo, edited the HTML, confirmed Reset restored the selected template, confirmed Clear emptied all three panels, and confirmed neither action updated the preview until Run was clicked.
+- One thing I learned: Keeping editor state changes separate from preview state makes the app behavior easier to predict and test manually.
