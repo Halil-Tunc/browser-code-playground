@@ -51,3 +51,8 @@ Browser-based code playground inspired by CodeSandbox.
 - What I changed before approving: I installed Vitest, added an `npm test` script, and created two focused tests by hand.
 - Verification: Ran `npm test` and confirmed 2 test files and 2 tests passed. Ran `npm run build` successfully. Manually verified the app twice: default Run plus Button Demo, then Clear plus Basic Page with a custom HTML edit.
 - One thing I learned: Writing tests myself forced me to identify the most important assumptions in the app instead of depending on Claude to decide what mattered.
+
+## AI Workflow
+For planning, I used ChatGPT to narrow the project from "make my own CodeSandbox" into a realistic browser-only MVP with HTML, CSS, JavaScript editors, an iframe preview, templates, controls, tests, and documentation. For execution, I used Claude Code in the terminal because it could read the repo, follow CLAUDE.md, edit multiple files, and run build checks after each focused task. For polish, I used manual review and small edits instead of asking for broad rewrites, because the codebase was small and I wanted to keep changes understandable. For review, I used ChatGPT-style checking to think through whether each task stayed inside scope and whether the behavior matched the acceptance criteria.
+
+One moment Claude Code clearly outperformed chat was implementation: once the task brief was specific, it was much faster at editing React files and running npm commands. One moment I switched tools was during testing: instead of asking Claude to write every test, I wrote two focused Vitest tests myself so I could verify the core assumptions of the project.
