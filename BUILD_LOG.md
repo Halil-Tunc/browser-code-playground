@@ -44,3 +44,10 @@ Browser-based code playground inspired by CodeSandbox.
 - What I changed before approving: I confirmed that Reset and Clear should only change editor contents and should not automatically update the iframe preview.
 - Verification: Ran `npm run build`, started the app with `npm run dev`, selected Button Demo, edited the HTML, confirmed Reset restored the selected template, confirmed Clear emptied all three panels, and confirmed neither action updated the preview until Run was clicked.
 - One thing I learned: Keeping editor state changes separate from preview state makes the app behavior easier to predict and test manually.
+
+## Task 7 — Tests and end-to-end verification
+- Brief: Add automated tests for the core helper behavior and manually verify the playground end-to-end.
+- What Claude proposed: I wrote the tests myself instead of asking Claude to generate them, focusing on `buildDoc` and template data because those are core project invariants.
+- What I changed before approving: I installed Vitest, added an `npm test` script, and created two focused tests by hand.
+- Verification: Ran `npm test` and confirmed 2 test files and 2 tests passed. Ran `npm run build` successfully. Manually verified the app twice: default Run plus Button Demo, then Clear plus Basic Page with a custom HTML edit.
+- One thing I learned: Writing tests myself forced me to identify the most important assumptions in the app instead of depending on Claude to decide what mattered.
